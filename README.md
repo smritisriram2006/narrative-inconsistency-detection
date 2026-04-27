@@ -97,10 +97,8 @@ venv\Scripts\activate
 
 ### 2. Install dependencies
 
-`requirements.txt` is currently empty, so install the packages used by the code directly:
-
 ```powershell
-pip install streamlit pandas openai-whisper spacy torch transformers tqdm datasets
+pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
@@ -112,10 +110,18 @@ The code currently expects `ffmpeg` at:
 C:\ffmpeg\bin\ffmpeg.exe
 ```
 
-If your installation is somewhere else, update:
+If you already have `ffmpeg` installed somewhere else, update:
 
 - `src/extract_audio.py`
 - `src/process_single_video.py`
+
+Example Windows setup:
+
+```powershell
+mkdir C:\ffmpeg
+# Download and extract ffmpeg so the executable ends up at:
+# C:\ffmpeg\bin\ffmpeg.exe
+```
 
 ## Running the app
 
